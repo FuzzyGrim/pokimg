@@ -1,5 +1,7 @@
 import requests
 from PIL import Image
+import os
+
 
 def upscale(img, ratio = 9):
     """ Upscale the image by the ratio factor """
@@ -7,7 +9,9 @@ def upscale(img, ratio = 9):
     return img.resize((width * ratio, height * ratio))
 
 def main():
-    with open("namelist.txt") as file:
+    absolute_path = os.path.dirname(__file__)
+
+    with open(f"{absolute_path}/namelist.txt") as file:
         pokemon_list = file.read().splitlines()
     
     for i, pokemon in enumerate(pokemon_list):
