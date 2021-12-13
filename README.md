@@ -5,11 +5,11 @@ This is a small script inspired by this [project](https://gitlab.com/phoneybadge
 ![Screenshot](screenshot.png)
 
 ## Requirements
-**Important**:This script requires a terminal that supports images, however, it is currently hard-coded to work only on [Kitty](https://sw.kovidgoyal.net/kitty/). I will add support for more terminals soon. 
+**Important**:This script requires a terminal that supports images, however, it is currently coded to work only on [Kitty](https://sw.kovidgoyal.net/kitty/) and [iTerm2](https://iterm2.com/downloads.html).
 
-So, to use this script, you will need:
-  - [Kitty](https://sw.kovidgoyal.net/kitty/binary/)
+In addition to one of these terminals, you will also need:
   - [Python](https://www.python.org/downloads/)
+  - If you are using iTerm2, you will need to install imgcat by clicking [iTerm2 > Install Shell Integration](https://i.stack.imgur.com/0DseS.png)
 
 ## Usage
 You can run the program from the command line by running [](https://github.com/FuzzyGrim/pokimg/blob/master/pokimg.sh):
