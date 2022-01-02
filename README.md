@@ -9,14 +9,30 @@ This is a small script inspired by this [project](https://gitlab.com/phoneybadge
 
 In addition to one of these terminals, you will also need:
   - [Python](https://www.python.org/downloads/)
-  - If you are using iTerm2, you will need to install imgcat by clicking [iTerm2 > Install Shell Integration](https://i.stack.imgur.com/0DseS.png)
+  - If you are using iTerm2, you will need to install [imgcat](https://iterm2.com/documentation-images.html) by clicking [iTerm2 > Install Shell Integration](https://i.stack.imgur.com/0DseS.png)
 
 ## Usage
-You can run the program from the command line by running [](https://github.com/FuzzyGrim/pokimg/blob/master/pokimg.sh):
+You will need to run [`pokimg.sh`](https://github.com/FuzzyGrim/pokimg/blob/master/pokimg.sh):
 
-Example:
+Printing out a random pokemon:
+```sh
+pokimg.sh
+pokimg.sh "-g"
 ```
-$HOME/pokimg/pokimg.sh
+
+Printing out a random pokemon from generation 1:
+```sh
+pokimg.sh "-g 1"
+```
+
+Printing out a random pokemon from generations 1,3 and 5:
+```sh
+pokimg.sh "-g 1 3 5"
+```
+
+Printing out a random pokemon from generations 1-3
+```sh
+pokimg.sh "-g 1-3"
 ```
 
 ## Running on terminal startup
@@ -27,8 +43,8 @@ You can display a random pokemon whenever a terminal gets launched by adding the
 
 These are some of the features I am thinking of adding:
 
+  - ~~Specify generation to print~~
   - Choose upscale factor
   - Print a specific pokemon
-  - Print a random pokemon from a specific generation
   - Print list of all pokemon
   - Add help page for the program

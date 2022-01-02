@@ -9,10 +9,13 @@ fi
 
 ABSOLUTE_PATH=$(cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P)
 
-POKEMON=$(python3 $ABSOLUTE_PATH/random_pokemon.py)
+OUTPUT=$(python3 $ABSOLUTE_PATH/random_pokemon.py $1)
 
-echo $POKEMON
+echo $OUTPUT
 echo " "
+
+set -- $OUTPUT
+POKEMON=$1
 
 case $TERMINAL in
 
