@@ -12,31 +12,40 @@ In addition to one of these terminals, you will also need:
   - If you are using iTerm2, you will need to install [imgcat](https://iterm2.com/documentation-images.html) by clicking [iTerm2 > Install Shell Integration](https://i.stack.imgur.com/0DseS.png)
 
 ## Usage
-You will need to run [`pokimg.sh`](https://github.com/FuzzyGrim/pokimg/blob/master/pokimg.sh):
+You will need to run [`pokimg`](https://github.com/FuzzyGrim/pokimg/blob/master/pokimg):
 
 Printing out a random pokemon:
 ```sh
-pokimg.sh
-pokimg.sh "-g"
+pokimg
+```
+
+Printing out a specific pokemon:
+```sh
+pokimg -n pikachu
 ```
 
 Printing out a random pokemon from generation 1:
 ```sh
-pokimg.sh "-g 1"
+pokimg -g 1
 ```
 
 Printing out a random pokemon from generations 1,3 and 5:
 ```sh
-pokimg.sh "-g 1 3 5"
+pokimg -g 1 3 5
 ```
 
 Printing out a random pokemon from generations 1-3
 ```sh
-pokimg.sh "-g 1-3"
+pokimg -g 1-3
+```
+
+Printing list of all pokemon names.
+```sh
+pokimg -l
 ```
 
 ## Running on terminal startup
-You can display a random pokemon whenever a terminal gets launched by adding the `$HOME/pokimg/pokimg.sh` to your `.bashrc` or `config.fish` or `.zshrc`.
+You can display a random pokemon whenever a terminal gets launched by adding the `$HOME/pokimg/pokimg` to your `.bashrc` or `config.fish` or `.zshrc`.
 
 
 ## TODO
@@ -44,7 +53,7 @@ You can display a random pokemon whenever a terminal gets launched by adding the
 These are some of the features I am thinking of adding:
 
   - ~~Specify generation to print~~
+  - ~~Print a specific pokemon~~
+  - ~~Print list of all pokemon names~~
+  - ~~Add help flag for the program~~
   - Choose upscale factor
-  - Print a specific pokemon
-  - Print list of all pokemon
-  - Add help page for the program

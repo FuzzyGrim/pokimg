@@ -1,0 +1,109 @@
+#!/bin/bash
+if [ "$TERM_PROGRAM" == "iTerm.app" ];
+  then TERMINAL="iTerm2"
+
+else
+  TERMINAL=$(ps -o comm= -p "$(($(ps -o ppid= -p "$(($(ps -o sid= -p "$$")))")))")
+fi
+
+ABSOLUTE_PATH=$(cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P)
+
+
+fmt_help="  %-20s\t%-54s\n"
+
+_help(){
+    #Function that prints out the help text
+
+    echo "Usage: pokimg [OPTION] [SECTION]"
+    echo ""
+
+    echo "If no arguments are provided, a random pokemon will be displayed."
+    echo ""
+
+    printf "${fmt_help}" \
+        "-h, --help" "Print this help." \
+        "-l, --list" "Print list of all pokemon"\
+        "-g, --gen"  "Print by generation number. Accepts (1 3 5) or (1-3)." \
+        "-n, --name" "Print pokemon by name."
+    echo ""
+    echo "Examples: pokimg --name pikachu"
+    echo "          pokimg -g 2 3 4"
+    echo "          pokimg 2-4"
+}
+
+
+_random_pokemon(){
+  OUTPUT=$(python3 $ABSOLUTE_PATH/random_pokemon.py $@)
+  echo $OUTPUT
+  echo " "
+  set -- $OUTPUT
+  POKEMON=$1
+}
+
+
+_print_pokemon(){
+  case $TERMINAL in
+
+    kitty)
+      kitty icat --align left --silent $ABSOLUTE_PATH/images/$POKEMON.png
+      ;;
+
+    iTerm2)
+      $HOME/.iterm2/imgcat $ABSOLUTE_PATH/images/$POKEMON.png
+      ;;
+
+    *)
+      echo "Terminal Emulator is neither Kitty nor iTerm2"
+      ;;
+
+  esac
+}
+
+
+_list_pokemon_names(){
+  cat "$ABSOLUTE_PATH/namelist.txt"|less
+}
+
+
+case "$#" in
+  0)
+    # display random pokemon if no arguments are given
+    _random_pokemon
+    _print_pokemon $POKEMON
+    ;;
+  
+  1)
+    case $1 in
+      -h | --help | help)
+        _help
+        ;;
+      
+      -l | --list | list)
+        _list_pokemon_names
+        ;;
+      
+      *)
+        echo "Input error, try 'pokimg --help' for more information."
+        exit 1
+        ;;
+    esac
+    ;;
+
+  *)
+    case $1 in
+      -g | --gen)
+        _random_pokemon $@
+        _print_pokemon $POKEMON
+        ;;
+      
+      -n | --name)
+        POKEMON=$2
+        _print_pokemon $2
+        ;;
+      *)
+
+        echo "Input error, try 'pokimg --help' for more information."
+        exit 1
+    esac
+    ;;
+esac

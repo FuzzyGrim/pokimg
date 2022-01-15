@@ -33,20 +33,18 @@ def get_index(generation):
 
 def get_generation():
     generation = random.randint(1, 8)
-    if len(sys.argv) > 1:
-        command = sys.argv[1]
-        if command == "-g":
-            generations = sys.argv[2:]
+    if len(sys.argv) > 1:        
+        generations = sys.argv[2:]
 
-            if generations:
-                if "-" in generations[0]:
-                    interval = generations[0].split("-")
-                    generations = list(range(int(interval[0]), int(interval[1]) + 1))
+        if generations:
+            if "-" in generations[0]:
+                interval = generations[0].split("-")
+                generations = list(range(int(interval[0]), int(interval[1]) + 1))
 
-                if not all(map(lambda g: 1 <= int(g) <= 8, generations)):
-                    raise ValueError("Invalid generation, it must be from 1-8.")
-            
-                generation = int(random.choice(generations))
+            if not all(map(lambda g: 1 <= int(g) <= 8, generations)):
+                raise ValueError("Invalid generation, it must be from 1-8.")
+        
+            generation = int(random.choice(generations))
 
     return generation
 
