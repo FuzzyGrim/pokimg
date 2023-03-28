@@ -45,7 +45,7 @@ _print_pokemon(){
   case $TERMINAL in
 
     kitty)
-      kitty icat --align left --silent $ABSOLUTE_PATH/images/$POKEMON.png
+      kitten icat --align left --silent $ABSOLUTE_PATH/images/$POKEMON.png
       ;;
 
     iTerm2)
