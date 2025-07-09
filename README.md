@@ -6,6 +6,7 @@ This is a small script inspired by this [project](https://gitlab.com/phoneybadge
 
 ## Requirements
 **Important**:This script requires `chafa`.
+**Note**: This project only works in terminal emulators that are compatible with [Chafa](https://github.com/hpjansson/chafa/).
 
 In addition to `chafa`, you will also need:
   - [Python](https://www.python.org/downloads/)
