@@ -5,15 +5,14 @@ This is a small script inspired by this [project](https://gitlab.com/phoneybadge
 ![Screenshot](screenshot.png)
 
 ## Requirements
-**Important**:This script requires `chafa`.
-**Note**: This project only works in terminal emulators that are compatible with [Chafa](https://github.com/hpjansson/chafa/).
+**Important**: This script requires [Kitty](https://sw.kovidgoyal.net/kitty/), [iTerm2](https://iterm2.com/downloads.html) or [Chafa](https://github.com/hpjansson/chafa/) with a compatible terminal emulator.
 
-In addition to `chafa`, you will also need:
+In addition, you will also need:
   - [Python](https://www.python.org/downloads/)
   - If you are using iTerm2, you will need to install [imgcat](https://iterm2.com/documentation-images.html) by clicking [iTerm2 > Install Shell Integration](https://i.stack.imgur.com/0DseS.png)
 
 ## Usage
-You will need to run [`pokimg`](https://github.com/tuffLiyang/pokimg/blob/master/pokimg):
+You will need to run [`pokimg`](https://github.com/FuzzyGrim/pokimg/blob/master/pokimg):
 
 Printing out a random pokemon:
 ```sh
