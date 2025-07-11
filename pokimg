@@ -41,6 +41,9 @@ _random_pokemon(){
 }
 
 
+_check_chafa(){
+  command -v chafa >/dev/null 2>&1 || { echo >&2 "Require chafa. Aborting."; exit 1; }
+}
 _print_pokemon(){
   case $TERMINAL in
 
@@ -53,7 +56,8 @@ _print_pokemon(){
       ;;
 
     *)
-      echo "Terminal Emulator is neither Kitty nor iTerm2"
+      _check_chafa;
+      chafa  $ABSOLUTE_PATH/images/$POKEMON.png
       ;;
 
   esac

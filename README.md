@@ -5,9 +5,9 @@ This is a small script inspired by this [project](https://gitlab.com/phoneybadge
 ![Screenshot](screenshot.png)
 
 ## Requirements
-**Important**:This script requires a terminal that supports images, however, it is currently coded to work only on [Kitty](https://sw.kovidgoyal.net/kitty/) and [iTerm2](https://iterm2.com/downloads.html).
+**Important**: This script requires [Kitty](https://sw.kovidgoyal.net/kitty/), [iTerm2](https://iterm2.com/downloads.html) or [Chafa](https://github.com/hpjansson/chafa/) with a compatible terminal emulator.
 
-In addition to one of these terminals, you will also need:
+In addition, you will also need:
   - [Python](https://www.python.org/downloads/)
   - If you are using iTerm2, you will need to install [imgcat](https://iterm2.com/documentation-images.html) by clicking [iTerm2 > Install Shell Integration](https://i.stack.imgur.com/0DseS.png)
 
